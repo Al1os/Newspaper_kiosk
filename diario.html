@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <style type="text/css">
+      button{
+        background-color: red;
+        margin-left: 330px;
+        font-size: 28px;
+      }
+
+      body{
+        background-color: grey;
+      }
+
+      iframe{
+        width: 1200px;
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <iframe id = "screen" src="https://www.abc.com.py/" title="Diario"></iframe>
+    <br>
+    <button onclick = "changeLeft()">←</button>
+    <button onclick = "changeRight()">→</button>
+    <button onclick="add()">+</button>
+    <p id="message"></p>
+
+    <script type="text/javascript">
+      count = 0;
+      webpg = ["https://www.abc.com.py/", "https://www.bbc.com/", "https://www.ultimahora.com/"];
+
+      function changeLeft(){
+        if (count > 0){
+          count -= 1;
+        } 
+        else{
+          count = webpg.length - 1;
+        }
+        
+      document.getElementById('screen').src = webpg[count];
+      }
+
+      function changeRight(){
+      if (count < webpg.length - 1){
+        count += 1;
+      }
+      
+      else{
+        count = 0;
+      }
+
+        
+      document.getElementById('screen').src = webpg[count];
+      }
+
+      function add() {
+        let wbpage = prompt("Please enter your webpage: ", "");
+        if (wbpage != null || webpage != "") {
+          webpg.push(wbpage);
+        }
+      }
+</script>
+    </script>
+
+
+  </body>
+</html>
